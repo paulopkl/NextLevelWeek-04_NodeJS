@@ -5,9 +5,14 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
+    "test": "npm run setv && jest && npm run clear",
+    "test:linux": "npm run clear:linux && NODE_ENV=test jest && npm run clear:linux",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
     "migrate": "ts-node-dev node_modules/typeorm/cli.js migration:run",
-    "rollback": "ts-node-dev node_modules/typeorm/cli.js migration:revert"
+    "rollback": "ts-node-dev node_modules/typeorm/cli.js migration:revert",
+    "setv": "set NODE_ENV=test && npm run clear",
+    "clear": "cd src && cd database && del database.test.sqlite",
+    "clear:linux": "rm ./src/database/database.test.sqlite"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +26,12 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.11",
+    "@types/jest": "^26.0.20",
+    "@types/supertest": "^2.0.10",
     "@types/uuid": "^8.3.0",
+    "jest": "^26.6.3",
+    "supertest": "^6.1.3",
+    "ts-jest": "^26.5.2",
     "ts-node-dev": "^1.1.1",
     "typescript": "^4.1.5"
   }
