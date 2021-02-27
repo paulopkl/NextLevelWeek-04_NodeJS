@@ -1,0 +1,70 @@
+<style>
+    .container {
+        width: 800px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+
+    .value {
+        padding: 10px;
+        margin: 5px;
+        background: #8257e6;
+        color: #FFF;
+        border-radius: 6px;
+        width: 15px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .level {
+        margin: 10px;
+        width: 350px;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .answers {
+        width: 350px;
+
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
+
+<div class="container">
+    <label>Hello <strong>{{ name }}</strong>! everything's fine with you?</label>
+
+    <h3>{{ title }}</h3>
+    <br />
+    <strong>{{ description }}</strong>
+
+    <div class="level">
+        <span>Unlikely!</span>
+        <span>Very Likely!</span>
+    </div>
+
+    http://localhost:3333/answers/${nota}?u={id_user}
+    <div class="answers">
+        <a href="{{ link }}/1?u={{ id }}" class="value">1</a>
+        <a href="{{ link }}/2?u={{ id }}" class="value">2</a>
+        <a href="{{ link }}/3?u={{ id }}" class="value">3</a>
+        <a href="{{ link }}/4?u={{ id }}" class="value">4</a>
+        <a href="{{ link }}/5?u={{ id }}" class="value">5</a>
+        <a href="{{ link }}/6?u={{ id }}" class="value">6</a>
+        <a href="{{ link }}/7?u={{ id }}" class="value">7</a>
+        <a href="{{ link }}/8?u={{ id }}" class="value">8</a>
+        <a href="{{ link }}/9?u={{ id }}" class="value">9</a>
+        <a href="{{ link }}/10?u={{ id }}" class="value">10</a>
+    </div>
+
+    <br />
+    <br />
+
+    <strong>Your Opnion is very important to us!</strong>
+    <h3>Team | <strong>NLW</strong></h3>
+</div>
